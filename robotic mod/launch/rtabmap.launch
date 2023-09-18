@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+
+<launch>
+    <arg name="args" default="--delete_db_on_start"/>
+
+ 
+    <node pkg="rtabmap_sync" type="rgbd_sync" name="rgbd_sync">
+        <remap from="rgb/image"  to="/zed/zed_nodelet/rgb/image_rect_color"/>
+        <remap from="rgb/camera_info"  to="/zed/zed_nodelet/rgb/camera_info"/>
+        <remap from="depth/image"  to="/zed/zed_nodelet/depth/depth_registered"/>        
+        <param name="approx_sync" value="false"/>
+    </node>
+
+
+
+    <!-- RTABmap -->
+    <!-- <node name="rtabmap" pkg="rtabmap_slam" type="rtabmap" output="screen" args="$(arg args)" launch-prefix="">
+        <rosparam command="load" file="$(find zed_rtabmap_example)/params/rtabmap.yaml" />   
+
+
+        <remap from="rgb/image"         to="/zed/zed_nodelet/rgb/image_rect_color"/>
+        <remap from="depth/image"       to="/zed/zed_nodelet/depth/depth_registered"/>
+        <remap from="rgb/camera_info"   to="/zed/zed_nodelet/rgb/camera_info"/>
+
+        <remap from="grid_map"          to="map" />
+        <remap from="odom"              to="/zed/zed_nodelet/odom"/>
+
+
+        <param name="Mem/IncrementalMemory" type="string" value="true"/>
+        <param name="Mem/InitWMWithAllNodes" type="string" value="false"/>
+    </node> -->
+
+    <include file="$(find rtabmap_launch)/launch/rtabmap.launch">
+        <arg name="rtabmap_args" value="--delete_db_on_start"/>
+        <arg name="rgb_topic" value="/zed/zed_nodelet/rgb/image_rect_color"/>
+        <arg name="depth_topic" value="/zed/zed_nodelet/depth/depth_registered"/>
+        <arg name="camera_info_topic" value="/zed/zed_nodelet/rgb/camera_info"/>
+        <arg name="frame_id" value="base_link"/>
+        <arg name="approx_sync" value="true"/>
+        <arg name="wait_imu_to_init" value="true"/>
+        <arg name="imu_topic" value="/zed/zed_nodelet/imu/data"/>
+        <arg name="rgbd_sync" value="true"/>
+        <arg name="approx_rgbd_sync" value="false"/>
+
+        <arg name="rviz" value="true"/>
+        <arg name="rtabmap_viz" value="false"/>
+    </include>
+    
+    <node pkg="detection" type="detection.py" name="detection"/>
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find roverrobotics_driver)/rviz/vis.rviz" />
+</launch>
+
