@@ -22,7 +22,7 @@ Culvert condition assessment is essential to maintaining roadways to ensure adeq
 
 ## Packages (and Modifications):
 
-- [detection](https://github.com/khuechuong/culvert_inspection/tree/main/detection) contains our YOLOv8 ROS implementation for defect localization.
+- [detection](https://github.com/khuechuong/culvert_inspection/tree/main/detection) contains our defect localization ROS implementation by fusing YOLOv8 model result with pointcloud (x,y,z).
 
 - [zed](https://github.com/khuechuong/culvert_inspection/tree/main/zed) shows our zed configuration
 
