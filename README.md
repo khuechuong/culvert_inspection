@@ -45,4 +45,4 @@ or just run
 ```cpp
 roslaunch zed_nav.launch
 ```
-save it and post process it later
+save data and post-process it.
