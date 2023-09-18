@@ -32,7 +32,7 @@ Culvert condition assessment is essential to maintaining roadways to ensure adeq
   - [modified ROS code](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/modified%20ROS%20code) shows our changes made to the explore_lite package to our purpose.
  
 ## Segmentation:
-- [Segmentation](https://github.com/khuechuong/culvert_inspection/tree/main/Segmentation) shows our semantic segmentation we we cloned from [Image Segmentation Keras](https://github.com/divamgupta/image-segmentation-keras) and modified to our need. [CodeGuide.doxc](https://github.com/khuechuong/culvert_inspection/blob/main/Segmentation/Code%20Guide.docx) contains instruction on how to run it.
+- [Segmentation](https://github.com/khuechuong/culvert_inspection/tree/main/Segmentation) shows our semantic segmentation we we cloned from [Image Segmentation Keras](https://github.com/divamgupta/image-segmentation-keras) and modified to our need. [Code Guide.docx](https://github.com/khuechuong/culvert_inspection/blob/main/Segmentation/Code%20Guide.docx) contains instruction on how to run it.
 
 ## Run:
 
