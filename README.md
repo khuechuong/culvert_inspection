@@ -11,6 +11,8 @@
 - Zed Mini
 - Linear Actuator & servos (for arm)
 - Intel NUC Extreme 11
+- LED lights
+- ER sensor
 
 ## Package used:
 - We use many packages like zed, roverrobotic_driver, ros_numpy, explore_lite.
