@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+
+<launch>
+
+    <node pkg="rosbag" type="play" name="rosbag_play" args="$(find roverrobotics_driver)/bag/zed_data_2023-09-13-18-03-06.bag " />
+    
+    <node pkg="detection" type="detection.py" name="detection"/>
+    
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find roverrobotics_driver)/rviz/vis.rviz" />
+</launch>
+
