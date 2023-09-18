@@ -54,7 +54,7 @@ roslaunch zed_nav.launch
 ```
 save data and post-process it.
 
-**Note: Running rtabmap.launch gives better quality and accuracy since it uses rtabmap_odom.
+***Note: Running rtabmap.launch gives better quality and accuracy since it uses rtabmap_odom.***
 
 ## Contact:
 - [Chuong Le](mailto:cle@nevada.unr.edu)
