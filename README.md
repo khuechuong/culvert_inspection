@@ -32,6 +32,7 @@ Culvert condition assessment is essential to maintaining roadways to ensure adeq
   - [config](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/config) shows our ROS navigation stack config.
   - [launch](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/launch) shows our launch file for launching ROS navigation stack,zed camera, rover zero 3, exploration, rosserial_node, 2d mapping, rtabmap.
   - [modified ROS code](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/modified%20ROS%20code) shows our changes made to the explore_lite package to our purpose from pure exploration to data-driven exploration by subscribing to the [detection]((https://github.com/khuechuong/culvert_inspection/tree/main/detection)) node results.
+  - [teleop_key.py](https://github.com/khuechuong/culvert_inspection/blob/main/robotic%20mod/modified%20ROS%20code/teleop_key.py) is a modification of [teleop_twist_keyboard.py](https://github.com/ros-teleop/teleop_twist_keyboard) to control the ER arm. The arduino [arduino](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/arduino) use rosserial to subscribe to command from teleop_key.py.
  
 ## Segmentation:
 - [Segmentation](https://github.com/khuechuong/culvert_inspection/tree/main/Segmentation) shows our semantic segmentation we we cloned from [Image Segmentation Keras](https://github.com/divamgupta/image-segmentation-keras) and modified to our need. [Code Guide.docx](https://github.com/khuechuong/culvert_inspection/blob/main/Segmentation/Code%20Guide.docx) contains instruction on how to run it.
@@ -55,7 +56,11 @@ roslaunch zed_nav.launch
 save data and post-process it.
 
 ***Note: Running rtabmap.launch gives better quality and accuracy since it uses rtabmap_odom.***
-
+run 
+```cpp
+rosrun teleop_key.launch
+```
+to control ER arm.
 ## Contact:
 - [Chuong Le](mailto:cle@nevada.unr.edu)
 - [Hung La](mailto:hla@unr.edu)
