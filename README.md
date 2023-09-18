@@ -25,6 +25,7 @@ Culvert condition assessment is essential to maintaining roadways to ensure adeq
 - [zed-ros-wrapper](https://github.com/stereolabs/zed-ros-wrapper) and [zed-ros-examples](https://github.com/stereolabs/zed-ros-examples) is the package we used for the zed mini.
 - [explore_lite](https://github.com/hrnr/m-explore) is the 2D exploration package we used for navigation. Modification in [modified ROS code](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/modified%20ROS%20code) folder.
 - [gmapping](https://github.com/ros-perception/slam_gmapping) is just a simple 2D mapping node we used for exploration. (sudo apt install ros-<distro>-gmapping)
+- [rtabmap](https://github.com/introlab/rtabmap_ros) is the tool we used for 3D mapping. Our rtabmap launch is [rtabmap.launch](https://github.com/khuechuong/culvert_inspection/blob/main/robotic%20mod/launch/rtabmap.launch).
 - [zed](https://github.com/khuechuong/culvert_inspection/tree/main/zed) folder contains the customized config for our zed mini.
 - [robotic mod](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod) is our modification of ROS packages that we clone and used:
   - [arduino](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/arduino) shows our arduino file using rossarduino and rosserial to control our arm.
