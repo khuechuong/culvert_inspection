@@ -31,6 +31,18 @@
 
 ## Run:
 
+launch both:
+
 ```cpp
 roslaunch zed_nav.launch
 ```
+and 
+```cpp
+roslaunch rtabmap.launch
+```
+
+or just run 
+```cpp
+roslaunch zed_nav.launch
+```
+save it and post process it later
