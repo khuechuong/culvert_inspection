@@ -46,3 +46,8 @@ or just run
 roslaunch zed_nav.launch
 ```
 save data and post-process it.
+
+
+## Contact:
+- [Chuong Le](mailto:cle@nevada.unr.edu)
+- [Hung La](mailto:hla@unr.edu)
