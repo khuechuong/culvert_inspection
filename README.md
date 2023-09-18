@@ -2,6 +2,9 @@
 
 - This work was done in the [Advance Robotics and Autonmation (ARA) Lab](https://ara.cse.unr.edu/) 
 
+## Abstract
+Culvert condition assessment is essential to maintaining roadways to ensure adequate road surface drainage and public safety since thousands of culverts are in the United States. Culvert deteriorates with time due to aging material, traffic load, and sometimes inadequate maintenance. Culvert maintenance relies on manual inspection, which has drawbacks, including risks to workers, time-consuming, high labor hours, and prone to human errors. In addition, to the author's best knowledge, only superficial methods (visual inspection) have been used for condition assessment. Non-destructive evaluation (NDE) methods are preferred in other civil structure inspections like bridges since they do not require inspection sites to be evacuated during the inspection and can offer an interior assessment of the structure. This paper presents a data-driven autonomous robotic exploration system equipped with visual and NDE's electrical resistivity (ER) sensors for a comprehensive culvert condition assessment. The system produces a 3D map highlighting defects (i.e. cracks and spalls) and an ER condition map highlighting corrosion. 
+
 ## Sofware used:
 - Ubuntu 20.04 
 - ROS Noetic
