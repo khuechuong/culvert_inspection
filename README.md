@@ -19,17 +19,22 @@ Culvert condition assessment is essential to maintaining roadways to ensure adeq
 - LED lights
 - ER sensor
 
-## Package used:
-- We use many packages like zed, roverrobotic_driver, ros_numpy, explore_lite.
 
-## Packages (and Modifications):
-- [detection](https://github.com/khuechuong/culvert_inspection/tree/main/detection) contains our defect localization ROS implementation by fusing YOLOv8 model result with pointcloud (x,y,z).
-- [zed](https://github.com/khuechuong/culvert_inspection/tree/main/zed) shows our zed configuration
-- [robotic mod](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod) shows our robotic config:
+## ROS Packages (and Modifications):
+- [detection](https://github.com/khuechuong/culvert_inspection/tree/main/detection) contains our defect localization ROS implementation by fusing YOLOv8 model result with pointcloud (x,y,z). It subscribe both rbg and pointcloud map from zed.
+- [zed-ros-wrapper](https://github.com/stereolabs/zed-ros-wrapper) and [zed-ros-examples](https://github.com/stereolabs/zed-ros-examples) is the package we used for the zed mini.
+- [explore_lite](https://github.com/hrnr/m-explore) is the 2D exploration package we used for navigation. Modification in [modified ROS code](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/modified%20ROS%20code) folder.
+- [gmapping](https://github.com/ros-perception/slam_gmapping) is just a simple 2D mapping node we used for exploration. (sudo apt install ros-<distro>-gmapping)
+- [rtabmap](https://github.com/introlab/rtabmap_ros) is the tool we used for 3D mapping. Our rtabmap launch is [rtabmap.launch](https://github.com/khuechuong/culvert_inspection/blob/main/robotic%20mod/launch/rtabmap.launch).
+- [zed](https://github.com/khuechuong/culvert_inspection/tree/main/zed) folder contains the customized config for our zed mini.
+- [robotic mod](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod) is our modification of ROS packages that we clone and used:
   - [arduino](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/arduino) shows our arduino file using rossarduino and rosserial to control our arm.
-  - [config](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/config) shows our ROS navigation stack config
+  - [config](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/config) shows our ROS navigation stack config.
   - [launch](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/launch) shows our launch file for launching ROS navigation stack,zed camera, rover zero 3, exploration, rosserial_node, 2d mapping, rtabmap.
-  - [modified ROS code](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/modified%20ROS%20code) shows our changes made to the explore_lite package to our purpose. 
+  - [modified ROS code](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/modified%20ROS%20code) shows our changes made to the explore_lite package to our purpose from pure exploration to data-driven exploration by subscribing to the [detection]((https://github.com/khuechuong/culvert_inspection/tree/main/detection)) node results.
+ 
+## Segmentation:
+- [Segmentation](https://github.com/khuechuong/culvert_inspection/tree/main/Segmentation) shows our semantic segmentation we we cloned from [Image Segmentation Keras](https://github.com/divamgupta/image-segmentation-keras) and modified to our need. [Code Guide.docx](https://github.com/khuechuong/culvert_inspection/blob/main/Segmentation/Code%20Guide.docx) contains instruction on how to run it.
 
 ## Run:
 
@@ -49,6 +54,7 @@ roslaunch zed_nav.launch
 ```
 save data and post-process it.
 
+***Note: Running rtabmap.launch gives better quality and accuracy since it uses rtabmap_odom.***
 
 ## Contact:
 - [Chuong Le](mailto:cle@nevada.unr.edu)
