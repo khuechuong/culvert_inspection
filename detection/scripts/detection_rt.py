@@ -99,41 +99,41 @@ class defect_detection:
             self.vis_pub.publish(self.marker_ar)
             # cv2.imshow("Image window", self.rgb_map)
             # cv2.waitKey(3)
-            mark = Marker()
-            mark.header.frame_id= "map"
-            mark.header.stamp = rospy.get_rostime()
-            mark.type = Marker.POINTS
-            mark.action = Marker.ADD
-            mark.pose.orientation.w = 1.0
-            mark.id = 1000
-            mark.scale.x = 0.05
-            mark.scale.y = 0.05
-            mark.color.b = 1.0
-            mark.color.a = 1.0
+            #mark = Marker()
+            #mark.header.frame_id= "map"
+            #mark.header.stamp = rospy.get_rostime()
+            #mark.type = Marker.POINTS
+            #mark.action = Marker.ADD
+            #mark.pose.orientation.w = 1.0
+            #mark.id = 1000
+            #mark.scale.x = 0.05
+            #mark.scale.y = 0.05
+            #mark.color.b = 1.0
+            #mark.color.a = 1.0
             # defect pose -> point
             
-            for d in self.marker_ar.markers:
-                p = Point()
-                if d.points[0].y < self.cur_pos.y:
-                    p.x = d.points[3].x
-                    p.y = d.points[3].y
-                else:
-                    p.x = d.points[0].x
-                    p.y = d.points[0].y
+            #for d in self.marker_ar.markers:
+             #   p = Point()
+              #  if d.points[0].y < self.cur_pos.y:
+              #      p.x = d.points[3].x
+               #     p.y = d.points[3].y
+                #else:
+                 #   p.x = d.points[0].x
+                  #  p.y = d.points[0].y
                 
-                if self.cur_pos.y > p.y:
-                    reach = self.cur_pos.y - (0.71*0.9)
-                else:
-                    reach = self.cur_pos.y + (0.71*0.9)
+                #if self.cur_pos.y > p.y:
+                #    reach = self.cur_pos.y - (0.71*0.9)
+                #else:
+                #    reach = self.cur_pos.y + (0.71*0.9)
 
-                delta = abs(self.cur_pos.y - p.y)
-                if delta >= (0.71*0.9):
-                    p.y =  self.cur_pos.y + (p.y - reach) 
-                else:
-                    p.y = self.cur_pos.y
+                #delta = abs(self.cur_pos.y - p.y)
+               # if delta >= (0.71*0.9):
+                #    p.y =  self.cur_pos.y + (p.y - reach) 
+               # else:
+                #    p.y = self.cur_pos.y
                 # if blacklisted 
-                mark.points.append(p)
-            self.defect_pub.publish(mark)
+               # mark.points.append(p)
+            #self.defect_pub.publish(mark)
 
     def bboxMarker(self, coord, xyz_copy, crack):
         line_strip = Marker()
