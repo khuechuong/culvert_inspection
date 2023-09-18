@@ -19,15 +19,14 @@ Culvert condition assessment is essential to maintaining roadways to ensure adeq
 - LED lights
 - ER sensor
 
-## Package used:
-- We use many packages like zed, roverrobotic_driver, ros_numpy, explore_lite.
 
 ## ROS Packages (and Modifications):
 - [detection](https://github.com/khuechuong/culvert_inspection/tree/main/detection) contains our defect localization ROS implementation by fusing YOLOv8 model result with pointcloud (x,y,z).
-- [zed](https://github.com/khuechuong/culvert_inspection/tree/main/zed) shows our zed configuration
-- [robotic mod](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod) shows our robotic config:
+- [zed-ros-wrapper](https://github.com/stereolabs/zed-ros-wrapper) and [zed-ros-examples](https://github.com/stereolabs/zed-ros-examples) is the package we used for the zed mini.
+- [zed](https://github.com/khuechuong/culvert_inspection/tree/main/zed) folder contains the customized config for our zed mini.
+- [robotic mod](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod) is our modification of ROS packages that we clone and used:
   - [arduino](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/arduino) shows our arduino file using rossarduino and rosserial to control our arm.
-  - [config](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/config) shows our ROS navigation stack config
+  - [config](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/config) shows our ROS navigation stack config.
   - [launch](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/launch) shows our launch file for launching ROS navigation stack,zed camera, rover zero 3, exploration, rosserial_node, 2d mapping, rtabmap.
   - [modified ROS code](https://github.com/khuechuong/culvert_inspection/tree/main/robotic%20mod/modified%20ROS%20code) shows our changes made to the explore_lite package to our purpose.
  
