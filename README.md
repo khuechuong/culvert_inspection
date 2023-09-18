@@ -1,5 +1,6 @@
 # Data-Driven Autonomous Culvert Inspection Robot
 
+- This work was done in the [Advance Robotics and Autonmation (ARA) Lab](https://ara.cse.unr.edu/) 
 
 ## Sofware used:
 - Ubuntu 20.04 
