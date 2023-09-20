@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['crack', 'spall']
+
+roboflow:
+  workspace: unr-sjj6o
+  project: concrete-2mmzm
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/unr-sjj6o/concrete-2mmzm/dataset/1
